@@ -42,8 +42,11 @@
   </PropertyGroup>
   <ItemGroup>
      <Folder Include="Assets" />
-     <Folder Include="Assets\SirGames" />
-     <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\_Project" />
+     <Folder Include="Assets\_Project\Scenes" />
+     <Folder Include="Assets\_Project\Resources" />
+     <Folder Include="Assets\_Project\Prefabs" />
+     <Folder Include="Assets\_Project\Plugins" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Unity\Editor\2021.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

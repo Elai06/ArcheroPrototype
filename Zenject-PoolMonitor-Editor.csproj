@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\MpmView.cs" />
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\InPlaceStableSort.cs" />
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\MpmSettingsInstaller.cs" />
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\MpmWindow.cs" />
-     <Folder Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Resources" />
-     <Folder Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow" />
-     <Folder Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor" />
-     <Folder Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Resources\Installers" />
-     <None Include="Assets\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Zenject-PoolMonitor-Editor.asmdef" />
+     <Compile Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\MpmView.cs" />
+     <Compile Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\InPlaceStableSort.cs" />
+     <Compile Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\MpmSettingsInstaller.cs" />
+     <Compile Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow\MpmWindow.cs" />
+     <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Resources" />
+     <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\DebugWindow" />
+     <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor" />
+     <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Resources\Installers" />
+     <None Include="Assets\_Project\Plugins\Zenject\OptionalExtras\MemoryPoolMonitor\Editor\Zenject-PoolMonitor-Editor.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Unity\Editor\2021.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -312,13 +312,13 @@
      <HintPath>D:\Unity\Editor\2021.3.26f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Zenject-usage">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
@@ -333,7 +333,7 @@
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
      </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
      </Reference>
      <Reference Include="unityplastic">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -345,10 +345,10 @@
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
      </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

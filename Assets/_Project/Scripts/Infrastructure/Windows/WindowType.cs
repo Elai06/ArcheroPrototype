@@ -1,0 +1,30 @@
+﻿namespace Infrastructure.Windows
+{
+    public enum WindowType
+    {
+        Menu,
+        UpperPanel,
+        Shop,
+        ComplexWindow,
+        MiningWindow,
+        StorageOilWindow,
+        StorageWindow,
+        ProcessingWindow,
+        OrdersWindow,
+        DailyQuest,
+        SettingWindow,
+        PromoCode,
+        WorkerWindow,
+        DailyEntry,
+        Loading,
+        Investing,
+        MoneyBox,
+        BattlePass,
+        BattlePassQuests,
+        BattlePassBonus,
+        RewardPopup,
+        Tutorial,
+        BattlePassEndedSeason,
+        OfferWindow,
+    }
+}
