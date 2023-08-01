@@ -90,9 +90,12 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\_Project\Resources" />
      <Folder Include="Assets\_Project\Prefabs" />
+     <Folder Include="Assets\_Project\Art\Sprites\UI" />
      <Folder Include="Assets\Joystick Pack\Sprites\All Axis Backgrounds" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets\_Project\Plugins" />
+     <Folder Include="Assets\_Project\Art\Sprites" />
+     <Folder Include="Assets\_Project\Art" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

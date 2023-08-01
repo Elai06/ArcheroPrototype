@@ -63,7 +63,6 @@ namespace _Project.Scripts.Gameplay.Models.Currency
             {
                 value.Amount -= amount;
             }
-            
             UpdateProgress();
             UpdateValue?.Invoke();
         }
@@ -72,5 +71,12 @@ namespace _Project.Scripts.Gameplay.Models.Currency
         {
             _progressService.PlayerProgress.CurrencyProgressData = CurrenciesData.Values.ToList();
         }
+    }
+
+    public interface ICurrenciesModel
+    {
+        void Add(CurrencyType type, int amount);
+        event Action UpdateValue;
+        Dictionary<CurrencyType, CurrencyData> CurrenciesData { get; }
     }
 }

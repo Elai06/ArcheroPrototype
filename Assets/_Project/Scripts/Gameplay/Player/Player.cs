@@ -25,7 +25,7 @@ namespace _Project.Scripts.Gameplay.Player
         public bool IsDead { get; private set; }
 
         private bool _isCanAttack;
-        private Enemy _target;
+        private Transform _target;
 
         private float _timeToNextAttack;
 
@@ -79,8 +79,8 @@ namespace _Project.Scripts.Gameplay.Player
 
         private void InitializeTarget(Collider col)
         {
-            _trackingTarget.LookOnTarget(col.transform);
             DoDamage(col.gameObject.transform);
+            _trackingTarget.LookOnTarget(_target);
         }
 
         public void GetDamage(int damage)
@@ -105,6 +105,8 @@ namespace _Project.Scripts.Gameplay.Player
         {
             if (_trafficState == TrafficState.Stay && _isCanAttack)
             {
+                _target = targetPosition;
+
                 _isCanAttack = false;
                 Instantiate(Config.Bullet, _shotPosition.position, Quaternion.identity)
                     .Shot(targetPosition, Config.ForceShot, Config.Attack);

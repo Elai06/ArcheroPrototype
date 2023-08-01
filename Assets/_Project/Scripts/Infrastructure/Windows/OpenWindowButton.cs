@@ -16,7 +16,7 @@ namespace Infrastructure.Windows
             _windowService = windowService;
         }
 
-        protected override void OnClick()
+        public override void OnClick()
         {
             base.OnClick();
             

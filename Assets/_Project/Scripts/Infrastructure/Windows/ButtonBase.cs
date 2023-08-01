@@ -7,12 +7,13 @@ namespace Infrastructure.Windows
     {
         private Button _button;
         
-        private void Awake()
+        public virtual void Awake()
         {
+            _button = gameObject.GetComponent<Button>();
             _button.onClick.AddListener(OnClick);
         }
 
-        protected virtual void OnClick()
+        public virtual void OnClick()
         {
         }
     }

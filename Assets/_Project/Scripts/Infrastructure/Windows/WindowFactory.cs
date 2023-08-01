@@ -32,7 +32,7 @@ namespace SirGames.Scripts.Windows
             var windowStaticData = _gameStaticData.GetWindowData(windowType);
             var parent = _layers[windowStaticData.Layer].transform;
             var prefab = windowStaticData;
-            var windowInstance = _inject.Instantiate<Window>(prefab, parent);
+            var windowInstance = _inject.Instantiate<Window>(prefab.Window, parent);
             windowInstance.SetLayer(windowStaticData.Layer);
             return windowInstance;
         }

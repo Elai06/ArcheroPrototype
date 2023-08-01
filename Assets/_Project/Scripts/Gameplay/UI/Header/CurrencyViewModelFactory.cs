@@ -5,7 +5,7 @@ namespace _Project.Scripts.Gameplay.UI.Header
 {
     public class CurrencyViewModelFactory : IViewModelFactory<CurrencyViewModel,CurrenciesView, ICurrenciesModel>
     {
-        public CurrencyViewModel Create(ICurrenciesModel model, CurrenciesView view) => new(model, view);
+        public CurrencyViewModel Create(ICurrenciesModel model, CurrenciesView view) => new CurrencyViewModel( model, view);
 
     }
 }

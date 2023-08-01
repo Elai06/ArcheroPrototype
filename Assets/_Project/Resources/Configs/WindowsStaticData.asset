@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4ebb8b1140489d82a8da2b2890d376, type: 3}
   m_Name: WindowsStaticData
   m_EditorClassIdentifier: 
-  WindowsData:
+  _WindowsData:
   - WindowType: 1
+    Layer: 1
     Window: {fileID: 8771336451375631855, guid: 0ceb679d03d64644b97bda6d8b4d62fc, type: 3}
+  - WindowType: 0
+    Layer: 0
+    Window: {fileID: 0}
+  - WindowType: 2
+    Layer: 5
+    Window: {fileID: 6720900787815271582, guid: 5318881866796ab4ca49f819c79c3a15, type: 3}

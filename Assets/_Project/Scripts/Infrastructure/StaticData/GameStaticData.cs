@@ -19,9 +19,9 @@ namespace _Project.Scripts.Infrastructure.StaticData
 
         public EnemyConfigs GetEnemyConfig() => _enemyConfigs;
 
-        public Window GetWindowData(WindowType windowType)
+        public WindowData GetWindowData(WindowType windowType)
         {
-            return _windowsStaticData.WindowsData.Find(x => x.WindowType == windowType).Window;
+            return _windowsStaticData.GetWindows().Find(x => x.WindowType == windowType);
         }
     }
 }
