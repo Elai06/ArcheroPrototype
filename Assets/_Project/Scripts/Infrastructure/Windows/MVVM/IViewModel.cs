@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Infrastructure.Windows.MVVM
+namespace _Project.Scripts.Infrastructure.Windows.MVVM
 {
     public interface IViewModel
     {

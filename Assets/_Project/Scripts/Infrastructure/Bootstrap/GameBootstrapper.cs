@@ -1,9 +1,9 @@
+using _Project.Scripts.Infrastructure.StateMachine.States;
 using SirGames.Scripts.Infrastructure.StateMachine;
-using SirGames.Scripts.Infrastructure.StateMachine.Sates;
 using UnityEngine;
 using Zenject;
 
-namespace SirGames.Scripts.Infrastructure.Bootstrap
+namespace _Project.Scripts.Infrastructure.Bootstrap
 {
     public class GameBootstrapper : MonoBehaviour
     {
@@ -20,6 +20,19 @@ namespace SirGames.Scripts.Infrastructure.Bootstrap
         private void Start()
         {
             _stateMachine?.Enter<BootstrapState>();
+        }
+
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            if (pauseStatus)
+            {
+                _stateMachine.Enter<ExitState>();
+            }
+        }
+
+        private void OnApplicationQuit()
+        {
+            _stateMachine.Enter<ExitState>();
         }
     }
 }

@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Infrastructure.Installers
+namespace _Project.Scripts.Infrastructure.Installers
 {
     public class FactoryInstaller : MonoInstaller
     {

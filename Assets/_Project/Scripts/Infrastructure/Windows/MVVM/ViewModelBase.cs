@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using _Project.Scripts.Infrastructure.Windows.MVVM;
 using UnityEngine;
 
 namespace Infrastructure.Windows.MVVM

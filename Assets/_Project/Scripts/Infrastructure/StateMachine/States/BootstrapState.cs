@@ -1,11 +1,19 @@
+using Infrastructure.SaveLoads;
 using Infrastructure.StateMachine.Sates;
+using SirGames.Scripts.Infrastructure.StateMachine;
 
-namespace SirGames.Scripts.Infrastructure.StateMachine.Sates
+namespace _Project.Scripts.Infrastructure.StateMachine.States
 {
     public class BootstrapState : IState
     {
         private IStateMachine _stateMachine;
+        private readonly ISaveLoadService _saveLoadService;
 
+        public BootstrapState(ISaveLoadService saveLoadService)
+        {
+            _saveLoadService = saveLoadService;
+        }
+        
         public void Initialize(IStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
@@ -18,7 +26,8 @@ namespace SirGames.Scripts.Infrastructure.StateMachine.Sates
         public void Enter()
         {
             InitializeDependencies();
-            
+            _saveLoadService.Load();
+
             _stateMachine.Enter<LoadLevelState>();
         }
 

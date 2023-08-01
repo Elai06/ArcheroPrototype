@@ -1,6 +1,6 @@
 using System;
 
-namespace Infrastructure.PersistenceProgress
+namespace _Project.Scripts.Infrastructure.PersistenceProgress
 {
     [Serializable]
     public class TimeProgress

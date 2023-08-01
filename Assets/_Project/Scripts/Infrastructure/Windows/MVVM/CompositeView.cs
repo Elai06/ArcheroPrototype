@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Infrastructure.Windows.MVVM;
 using UnityEngine;
 using Utils.ZenjectInstantiateUtil;
 using Zenject;

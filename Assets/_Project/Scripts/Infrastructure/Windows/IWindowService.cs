@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using _Project.Scripts.Infrastructure.Windows;
 
 namespace Infrastructure.Windows
 {
     public interface IWindowService
     {
-        Task<Window> Open(WindowType windowType);
+        Window Open(WindowType windowType);
         void Close(WindowType windowType);
-        Task<Window> Open<TPaylaod>(WindowType windowType, TPaylaod paylaod);
+        Window Open<TPaylaod>(WindowType windowType, TPaylaod paylaod);
         Dictionary<WindowType, Window> CashedWindows { get; }
         bool IsOpen(WindowType tutorial);
         event Action<WindowType> OnClosed;

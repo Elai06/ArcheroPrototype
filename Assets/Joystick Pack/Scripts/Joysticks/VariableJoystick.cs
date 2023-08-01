@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class VariableJoystick : Joystick
@@ -15,13 +13,11 @@ public class VariableJoystick : Joystick
     public void SetMode(JoystickType joystickType)
     {
         this.joystickType = joystickType;
-        if(joystickType == JoystickType.Fixed)
+        if (joystickType == JoystickType.Fixed)
         {
             background.anchoredPosition = fixedPosition;
-            background.gameObject.SetActive(true);
         }
-        else
-            background.gameObject.SetActive(false);
+        //background.gameObject.SetActive(true);
     }
 
     protected override void Start()
@@ -43,8 +39,10 @@ public class VariableJoystick : Joystick
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if(joystickType != JoystickType.Fixed)
-            background.gameObject.SetActive(false);
+        /*if(joystickType != JoystickType.Fixed)
+            background.gameObject.SetActive(false);*/
+        
+        background.anchoredPosition = fixedPosition;
 
         base.OnPointerUp(eventData);
     }

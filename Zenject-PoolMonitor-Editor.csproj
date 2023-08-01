@@ -317,6 +317,9 @@
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
+     <Reference Include="AssetStoreTools">
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\AssetStoreTools\Editor\AssetStoreTools.dll</HintPath>
+     </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
      </Reference>
@@ -335,11 +338,14 @@
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
      </Reference>
-     <Reference Include="unityplastic">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     <Reference Include="AssetStoreToolsExtra">
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll</HintPath>
      </Reference>
      <Reference Include="log4netPlastic">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     </Reference>
+     <Reference Include="unityplastic">
+     <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -349,12 +355,6 @@
      </Reference>
      <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\_Project\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
-     </Reference>
-     <Reference Include="AssetStoreTools">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\AssetStoreTools\Editor\AssetStoreTools.dll</HintPath>
-     </Reference>
-     <Reference Include="AssetStoreToolsExtra">
-     <HintPath>D:\Git projects\ArcheroTestSirGames\Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>D:\Git projects\ArcheroTestSirGames\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

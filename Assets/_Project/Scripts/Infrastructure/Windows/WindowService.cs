@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using _Project.Scripts.Infrastructure.Windows;
 using MVVMLibrary.Enums;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ namespace Infrastructure.Windows
             return false;
         }
 
-        public async Task<Window> Open(WindowType windowType)
+        public Window Open(WindowType windowType)
         {
             OnOpen?.Invoke(windowType);
 
@@ -43,7 +44,7 @@ namespace Infrastructure.Windows
                 return window;
             }
 
-            var windowInstance = await _windowFactory.Create(windowType);
+            var windowInstance = _windowFactory.Create(windowType);
             windowInstance.SetType(windowType);
 
             if (_cashedWindows.ContainsKey(windowType))
@@ -68,9 +69,9 @@ namespace Infrastructure.Windows
             _windowsOnLayer[window.Layer] = window;
         }
 
-        public async Task<Window> Open<TPaylaod>(WindowType windowType, TPaylaod paylaod)
+        public Window Open<TPaylaod>(WindowType windowType, TPaylaod paylaod)
         {
-            var window = await Open(windowType);
+            var window = Open(windowType);
             if (window is PayloadWindow<TPaylaod> payloadWindow)
                 payloadWindow.OnOpen(paylaod);
 

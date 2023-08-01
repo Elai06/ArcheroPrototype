@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SirGames.Scripts.Infrastructure.Bootstrap
+namespace _Project.Scripts.Infrastructure.Bootstrap
 {
     public class GameRunner : MonoBehaviour
     {

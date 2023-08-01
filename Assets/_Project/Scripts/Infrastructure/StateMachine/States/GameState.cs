@@ -1,7 +1,9 @@
-﻿using Infrastructure.Windows;
+﻿using _Project.Scripts.Infrastructure.Windows;
+using Infrastructure.StateMachine.Sates;
+using Infrastructure.Windows;
 using SirGames.Scripts.Infrastructure.StateMachine;
 
-namespace Infrastructure.StateMachine.Sates
+namespace _Project.Scripts.Infrastructure.StateMachine.States
 {
     public class GameState : IState
     {
@@ -21,7 +23,6 @@ namespace Infrastructure.StateMachine.Sates
         public void Enter()
         {
             _windowService.Open(WindowType.UpperPanel);
-            _windowService.Open(WindowType.Menu);
         }
 
         public void Exit()

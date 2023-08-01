@@ -1,12 +1,112 @@
+using System;
+using _Project.Scripts.Gameplay.Configs.Enemy;
+using _Project.Scripts.Gameplay.Enums;
+using _Project.Scripts.Gameplay.Player;
 using SirGames.Scripts.Gameplay.Attributes;
+using SirGames.Scripts.Gameplay.Enemies;
 using UnityEngine;
 
-namespace SirGames.Scripts.Gameplay.Enemies
+namespace _Project.Scripts.Gameplay.Enemies
 {
-    public abstract class Enemy: MonoBehaviour, Damage, Health
+    public class Enemy : MonoBehaviour, Health
     {
-        public int DamageAmount { get; }
-        public int HealthAmount { get; }
-        public int CurrentHealth { get; }
+        private const int PLAYER = 6;
+
+        public event Action<Enemy> OnDead;
+
+        [SerializeField] private Transform _shotPosition;
+        [SerializeField] private TrackingTarget _trackingTarget;
+
+        public int HealthAmount { get; private set; }
+
+        private TrafficState _trafficState = TrafficState.Stay;
+
+        private EnemyConfigData _configData;
+
+        public bool IsDead { get; set; }
+
+        private bool _isCanAttack;
+        private Vector3 _previousPosition;
+        private float _timeToNextAttack;
+
+        public void Initialize(EnemyConfigData configData)
+        {
+            _configData = configData;
+            EnemyType = _configData.Type;
+            HealthAmount = configData.HealthAmount;
+        }
+
+        public EnemyType EnemyType { get; set; }
+
+        private void FixedUpdate()
+        {
+            IdentifyIsCanAttack();
+            IdentifyTrafficState();
+        }
+
+        private void IdentifyIsCanAttack()
+        {
+            if (!_isCanAttack)
+            {
+                _timeToNextAttack += Time.deltaTime;
+                if (_timeToNextAttack >= _configData.FireRate)
+                {
+                    _isCanAttack = true;
+                    _timeToNextAttack = 0;
+                }
+            }
+        }
+
+        private void IdentifyTrafficState()
+        {
+            _trafficState = _previousPosition != transform.position ? TrafficState.Move : TrafficState.Stay;
+            _previousPosition = transform.position;
+        }
+
+        private void OnTriggerStay(Collider col)
+        {
+            if (col.gameObject.layer == PLAYER)
+            {
+                DoDamage(col.transform);
+                MoveToTarget(col);
+                
+                _trackingTarget.LookOnTarget(col.transform);
+            }
+        }
+
+        private void MoveToTarget(Collider col)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, col.transform.position);
+            if (distanceToPlayer >= _configData.RadiusAttack)
+            {
+                Vector3 direction = (col.transform.position - transform.position).normalized;
+                transform.position += direction * _configData.MovementSpeed * Time.deltaTime;
+            }
+        }
+
+        public void GetDamage(int damage)
+        {
+            HealthAmount -= damage;
+            if (HealthAmount <= 0)
+            {
+                Dead();
+            }
+        }
+
+        private void Dead()
+        {
+            gameObject.SetActive(false);
+            OnDead?.Invoke(this);
+        }
+
+        private void DoDamage(Transform targetPosition)
+        {
+            if (_trafficState == TrafficState.Stay && _isCanAttack)
+            {
+                _isCanAttack = false;
+                Instantiate(_configData.Bullet, _shotPosition.position, Quaternion.identity)
+                    .Shot(targetPosition, _configData.ForceShot, _configData.DamageAmount);
+            }
+        }
     }
 }

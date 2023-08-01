@@ -1,7 +1,6 @@
 ﻿using System;
-using SirGames.Scripts.PersistenceProgress;
 
-namespace Infrastructure.PersistenceProgress
+namespace _Project.Scripts.Infrastructure.PersistenceProgress
 {
     public interface IProgressService
     {

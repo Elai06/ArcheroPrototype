@@ -1,6 +1,6 @@
 ﻿using Utils.ZenjectInstantiateUtil;
 
-namespace Infrastructure
+namespace _Project.Scripts.Infrastructure.Installers
 {
     public class InjectService
     {

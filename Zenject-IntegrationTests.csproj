@@ -176,7 +176,6 @@
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Installers" />
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Resources\TestDiContainerMethods" />
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Resources\TestFromResource" />
-     <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\SceneTests\TestDestructionOrder\RenameThisResources" />
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Resources" />
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings" />
      <Folder Include="Assets\_Project\Plugins\Zenject\OptionalExtras\IntegrationTests\Resources\TestFromPrefabResource" />

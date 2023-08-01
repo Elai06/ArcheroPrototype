@@ -12,9 +12,9 @@ namespace Infrastructure.Windows.MVVM.SubView
         public void Add(string id, TData data)
         {
             TSubView subView;
-            if (SubViews.ContainsKey(id))
+            if (SubViews.TryGetValue(id, out TSubView view))
             {
-                subView = SubViews[id];
+                subView = view;
             }
             else
             {

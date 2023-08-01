@@ -1,9 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using _Project.Scripts.Infrastructure.Windows;
 
 namespace Infrastructure.Windows
 {
     public interface IWindowFactory
     {
-        Task<Window> Create(WindowType windowType);
+        Window Create(WindowType windowType);
     }
 }

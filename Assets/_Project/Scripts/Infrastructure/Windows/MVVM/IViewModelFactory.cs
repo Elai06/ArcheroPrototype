@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Windows.MVVM
+﻿using _Project.Scripts.Infrastructure.Windows.MVVM;
+
+namespace Infrastructure.Windows.MVVM
 {
     public interface IViewModelFactory<out TViewModel, in TView, in TModel>
         where TViewModel : IViewModel

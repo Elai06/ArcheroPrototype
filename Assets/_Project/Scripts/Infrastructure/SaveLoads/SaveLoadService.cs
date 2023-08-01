@@ -1,11 +1,8 @@
-﻿using System;
-using System.Globalization;
-using Infrastructure.PersistenceProgress;
+﻿using _Project.Scripts.Infrastructure.PersistenceProgress;
 using Infrastructure.SaveLoads;
-using SirGames.Scripts.PersistenceProgress;
 using UnityEngine;
 
-namespace SirGames.Scripts.SaveLoads
+namespace _Project.Scripts.Infrastructure.SaveLoads
 {
     public class SaveLoadService : ISaveLoadService
     {

@@ -1,0 +1,17 @@
+using _Project.Scripts.Gameplay.Bullet;
+using UnityEngine;
+
+namespace _Project.Scripts.Gameplay.Configs.Player
+{
+    [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Configs/Player")]
+    public class PlayerConfig : ScriptableObject
+    {
+        public int Attack;
+        public int Health;
+        public int MovementSpeed;
+        public int FiringRate;
+        public float DetectedRadius;
+        public float ForceShot;
+        public PlayerBullet Bullet;
+    }
+}

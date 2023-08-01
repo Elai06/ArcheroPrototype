@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6f91c8c180451fbf90d8afdc46a0e0, type: 3}
+  m_Name: GameStaticData
+  m_EditorClassIdentifier: 
+  _playerConfig: {fileID: 11400000, guid: db3b9116638a8a144b8dca28c29f35b8, type: 2}
+  _enemyConfigs: {fileID: 11400000, guid: 8a06142988e237e49a506295bc11c43d, type: 2}
+  _windowsStaticData: {fileID: 11400000, guid: 41cb2dd552fae134c8ca8535b3da6309, type: 2}

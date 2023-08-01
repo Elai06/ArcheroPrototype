@@ -1,7 +1,6 @@
 using System;
-using Infrastructure.PersistenceProgress;
 
-namespace SirGames.Scripts.PersistenceProgress
+namespace _Project.Scripts.Infrastructure.PersistenceProgress
 {
     public class TimeModel
     {

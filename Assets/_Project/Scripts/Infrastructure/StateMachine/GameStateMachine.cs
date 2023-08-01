@@ -1,9 +1,9 @@
+using _Project.Scripts.Infrastructure.StateMachine.States;
 using Infrastructure.StateMachine.Sates;
-using SirGames.Scripts.Infrastructure.StateMachine.Sates;
 
-namespace SirGames.Scripts.Infrastructure.StateMachine
+namespace _Project.Scripts.Infrastructure.StateMachine
 {
-    public class GameStateMachine : StateMachine
+    public class GameStateMachine : SirGames.Scripts.Infrastructure.StateMachine.StateMachine
     {
         public GameStateMachine(ExitState exitState, GameState gameState, LoadLevelState loadLevelState, BootstrapState bootstrapState)
         {

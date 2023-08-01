@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c4809a90ccf4dd086df89a6fba5c23b, type: 3}
+  m_Name: PlayerConfig
+  m_EditorClassIdentifier: 
+  Attack: 25
+  Health: 150
+  MovementSpeed: 7
+  FiringRate: 1
+  DetectedRadius: 15
+  ForceShot: 8
+  Bullet: {fileID: 1436735495621682818, guid: eab22e14438bbab42bf6d57af2b3052e, type: 3}

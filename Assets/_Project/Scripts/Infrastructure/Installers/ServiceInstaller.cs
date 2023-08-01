@@ -1,47 +1,42 @@
-using Infrastructure.PersistenceProgress;
+using _Project.Scripts.Gameplay.Configs.Player;
+using _Project.Scripts.Gameplay.Models.Currency;
+using _Project.Scripts.Gameplay.UI.Header;
+using _Project.Scripts.Infrastructure.PersistenceProgress;
+using _Project.Scripts.Infrastructure.SaveLoads;
+using _Project.Scripts.Infrastructure.StateMachine;
+using _Project.Scripts.Infrastructure.StateMachine.States;
+using _Project.Scripts.Infrastructure.StaticData;
 using Infrastructure.SaveLoads;
 using Infrastructure.SceneManagement;
 using Infrastructure.StateMachine.Sates;
-using Infrastructure.StaticData;
 using Infrastructure.UnityBehaviours;
 using Infrastructure.Windows;
 using SirGames.Scripts.Infrastructure.StateMachine;
-using SirGames.Scripts.Infrastructure.StateMachine.Sates;
 using SirGames.Scripts.Infrastructure.Windows;
-using SirGames.Scripts.SaveLoads;
-using SirGames.Scripts.StaticData;
 using SirGames.Scripts.Windows;
 using UnityEngine;
 using Zenject;
 
-namespace SirGames.Scripts.Infrastructure.Installers
+namespace _Project.Scripts.Infrastructure.Installers
 {
     public class ServiceInstaller : MonoInstaller
     {
         [SerializeField] private CoroutineService coroutineService;
         [SerializeField] private LayersContainer _layersContainer;
+        [SerializeField] private GameStaticData _gameStaticData;
+        [SerializeField] private EnemySpawner _enemySpawner;
 
         public override void InstallBindings()
         {
+            BindViewModelFactory();
             BindGameStates();
             BindInfrastructureServices();
             BindModels();
         }
 
-        private void BindInfrastructureServices()
+        private void BindViewModelFactory()
         {
-            Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
-            Container.Bind<IProgressService>().To<PlayerProgressService>().AsSingle();
-            Container.Bind<ISaveLoadService>().To<SaveLoadService>().AsSingle();
-            Container.Bind<ICoroutineService>().FromInstance(coroutineService).AsSingle();
-            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-            Container.Bind<IWindowService>().To<WindowService>().AsSingle();
-            Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
-            Container.Bind<LayersContainer>().FromInstance(_layersContainer).AsSingle();
-        }
-
-        private void BindModels()
-        {
+            Container.BindInterfacesAndSelfTo<CurrencyViewModelFactory>().AsSingle();
         }
 
         private void BindGameStates()
@@ -51,6 +46,24 @@ namespace SirGames.Scripts.Infrastructure.Installers
             Container.Bind<GameState>().AsSingle();
             Container.Bind<LoadLevelState>().AsSingle();
             Container.Bind<BootstrapState>().AsSingle();
+        }
+
+        private void BindInfrastructureServices()
+        {
+            Container.Bind<IProgressService>().To<PlayerProgressService>().AsSingle();
+            Container.Bind<ISaveLoadService>().To<SaveLoadService>().AsSingle();
+            Container.Bind<ICoroutineService>().FromInstance(coroutineService).AsSingle();
+            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<IWindowService>().To<WindowService>().AsSingle();
+            Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+            Container.Bind<LayersContainer>().FromInstance(_layersContainer).AsSingle();
+            Container.Bind<GameStaticData>().FromInstance(_gameStaticData).AsSingle();
+            Container.Bind<ICurrenciesModel>().To<CurrenciesModel>().AsSingle();
+        }
+
+        private void BindModels()
+        {
+            Container.Bind<EnemySpawner>().FromInstance(_enemySpawner).AsSingle();
         }
     }
 }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53be58e43f364c9e906eacb7221d30b0, type: 3}
+  m_Name: EnemyConfigs
+  m_EditorClassIdentifier: 
+  EnemyConfigData:
+  - Type: 0
+    Enemy: {fileID: -4532220598812593849, guid: fab3b7956bdfeea46a7f41f2154517ae, type: 3}
+    Bullet: {fileID: -3750374115141615657, guid: 051308e9bcdf1e548be04b330e0b1191, type: 3}
+    DamageAmount: 5
+    HealthAmount: 50
+    FireRate: 5
+    MovementSpeed: 3
+    RadiusAttack: 5
+    ForceShot: 5
+  - Type: 1
+    Enemy: {fileID: -4532220598812593849, guid: 6bcdce8b2d54af641a0eed2a9845bbb5, type: 3}
+    Bullet: {fileID: -3750374115141615657, guid: 051308e9bcdf1e548be04b330e0b1191, type: 3}
+    DamageAmount: 5
+    HealthAmount: 50
+    FireRate: 5
+    MovementSpeed: 3
+    RadiusAttack: 5
+    ForceShot: 5

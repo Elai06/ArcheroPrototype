@@ -1,7 +1,9 @@
+using _Project.Scripts.Gameplay.Models.Currency;
 using Infrastructure.SceneManagement;
 using Infrastructure.StateMachine.Sates;
+using SirGames.Scripts.Infrastructure.StateMachine;
 
-namespace SirGames.Scripts.Infrastructure.StateMachine.Sates
+namespace _Project.Scripts.Infrastructure.StateMachine.States
 {
     public class LoadLevelState : IState
     {
@@ -9,7 +11,6 @@ namespace SirGames.Scripts.Infrastructure.StateMachine.Sates
 
         private IStateMachine _stateMachine;
         private readonly ISceneLoader _sceneLoader;
-        
         
         public LoadLevelState(ISceneLoader sceneLoader)
         {

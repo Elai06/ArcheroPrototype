@@ -1,12 +1,11 @@
 ﻿using System;
-using SirGames.Scripts.PersistenceProgress;
 
-namespace Infrastructure.PersistenceProgress
+namespace _Project.Scripts.Infrastructure.PersistenceProgress
 {
     public class PlayerProgressService : IProgressService
     {
         public PlayerProgress PlayerProgress { get; private set; }
-        public bool IsLoaded { get; set; } = false;
+        public bool IsLoaded { get; set; }
         public event Action OnLoaded;
 
         public void InitializeProgress(PlayerProgress playerProgress)

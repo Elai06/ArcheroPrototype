@@ -1,4 +1,5 @@
-﻿using MVVMLibrary.Enums;
+﻿using _Project.Scripts.Infrastructure.Windows;
+using MVVMLibrary.Enums;
 using UnityEngine;
 
 namespace Infrastructure.Windows

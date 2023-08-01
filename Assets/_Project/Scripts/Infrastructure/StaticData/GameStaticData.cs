@@ -1,19 +1,27 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Gameplay.Configs.Enemy;
+using _Project.Scripts.Gameplay.Configs.Player;
+using _Project.Scripts.Infrastructure.Windows;
+using Infrastructure.Windows;
+using UnityEngine;
 using Zenject;
 
-namespace Infrastructure.StaticData
+namespace _Project.Scripts.Infrastructure.StaticData
 {
-    [CreateAssetMenu(fileName = FILE, menuName = MENU)]
+    [CreateAssetMenu(fileName = "GameStaticData", menuName = "Configs/GameStaticData")]
     public class GameStaticData : ScriptableObjectInstaller
     {
-        private const string CATEGORY = "StaticData";
-        private const string TITLE = "Game";
-        private const string FILE = TITLE + CATEGORY;
-        private const string MENU = "SirGames" + "/" + CATEGORY + "/" + TITLE;
+        [SerializeField] private PlayerConfig _playerConfig;
+        [SerializeField] private EnemyConfigs _enemyConfigs;
+
+        [SerializeField] private WindowsStaticData _windowsStaticData;
         
-        public override void InstallBindings()
+        public PlayerConfig GetPlayerConfig() => _playerConfig;
+
+        public EnemyConfigs GetEnemyConfig() => _enemyConfigs;
+
+        public Window GetWindowData(WindowType windowType)
         {
-            Container.Bind<GameStaticData>().FromInstance(this).AsSingle();
+            return _windowsStaticData.WindowsData.Find(x => x.WindowType == windowType).Window;
         }
     }
 }

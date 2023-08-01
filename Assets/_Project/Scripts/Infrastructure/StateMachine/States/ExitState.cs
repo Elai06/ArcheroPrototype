@@ -1,9 +1,8 @@
-﻿
-
-using Infrastructure.SaveLoads;
+﻿using Infrastructure.SaveLoads;
+using Infrastructure.StateMachine.Sates;
 using SirGames.Scripts.Infrastructure.StateMachine;
 
-namespace Infrastructure.StateMachine.Sates
+namespace _Project.Scripts.Infrastructure.StateMachine.States
 {
     public class ExitState : IState
     {
@@ -16,7 +15,6 @@ namespace Infrastructure.StateMachine.Sates
 
         public void Initialize(IStateMachine stateMachine)
         {
-            
         }
 
         public void Enter()
@@ -26,7 +24,6 @@ namespace Infrastructure.StateMachine.Sates
 
         public void Exit()
         {
-
         }
     }
 }

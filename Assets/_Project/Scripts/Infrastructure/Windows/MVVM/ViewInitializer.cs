@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace SirGames.Scripts.Windows.MVVM
+namespace _Project.Scripts.Infrastructure.Windows.MVVM
 {
     public abstract class ViewInitializer<TViewModel, TView, TModel> : MonoBehaviour
         where TViewModel : IViewModel
