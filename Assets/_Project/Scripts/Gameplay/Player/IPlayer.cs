@@ -1,4 +1,4 @@
-namespace SirGames.Scripts.Gameplay.Player
+namespace _Project.Scripts.Gameplay.Player
 {
     public interface IPlayer
     {

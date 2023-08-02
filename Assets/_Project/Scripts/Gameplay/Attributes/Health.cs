@@ -1,4 +1,4 @@
-namespace SirGames.Scripts.Gameplay.Attributes
+namespace _Project.Scripts.Gameplay.Attributes
 {
     public interface Health
     {

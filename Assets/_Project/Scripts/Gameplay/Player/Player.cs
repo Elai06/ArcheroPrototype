@@ -1,9 +1,7 @@
+using _Project.Scripts.Gameplay.Attributes;
 using _Project.Scripts.Gameplay.Configs.Player;
-using _Project.Scripts.Gameplay.Enemies;
 using _Project.Scripts.Gameplay.Enums;
 using _Project.Scripts.Infrastructure.StaticData;
-using SirGames.Scripts.Gameplay.Attributes;
-using SirGames.Scripts.Gameplay.Player;
 using UnityEngine;
 using Zenject;
 

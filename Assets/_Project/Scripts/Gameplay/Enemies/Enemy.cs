@@ -1,8 +1,8 @@
 using System;
+using _Project.Scripts.Gameplay.Attributes;
 using _Project.Scripts.Gameplay.Configs.Enemy;
 using _Project.Scripts.Gameplay.Enums;
 using _Project.Scripts.Gameplay.Player;
-using SirGames.Scripts.Gameplay.Attributes;
 using SirGames.Scripts.Gameplay.Enemies;
 using UnityEngine;
 
@@ -11,6 +11,7 @@ namespace _Project.Scripts.Gameplay.Enemies
     public class Enemy : MonoBehaviour, Health
     {
         private const int PLAYER = 6;
+        private const int FLY = 2;
 
         public event Action<Enemy> OnDead;
 
@@ -37,6 +38,14 @@ namespace _Project.Scripts.Gameplay.Enemies
         }
 
         public EnemyType EnemyType { get; set; }
+
+        private void Start()
+        {
+            if (_configData.Type == EnemyType.FlyEnemy)
+            {
+                transform.position += Vector3.up * FLY;
+            }
+        }
 
         private void FixedUpdate()
         {
@@ -68,18 +77,19 @@ namespace _Project.Scripts.Gameplay.Enemies
             if (col.gameObject.layer == PLAYER)
             {
                 DoDamage(col.transform);
-                MoveToTarget(col);
                 
+                MoveToTarget(col.transform);
                 _trackingTarget.LookOnTarget(col.transform);
             }
         }
 
-        private void MoveToTarget(Collider col)
+        private void MoveToTarget(Transform target)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, col.transform.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
             if (distanceToPlayer >= _configData.RadiusAttack)
             {
-                Vector3 direction = (col.transform.position - transform.position).normalized;
+                Vector3 direction = (target.position - transform.position).normalized;
+                direction.y = 0;
                 transform.position += direction * _configData.MovementSpeed * Time.deltaTime;
             }
         }
@@ -95,8 +105,8 @@ namespace _Project.Scripts.Gameplay.Enemies
 
         private void Dead()
         {
-            gameObject.SetActive(false);
             OnDead?.Invoke(this);
+            Destroy(gameObject);
         }
 
         private void DoDamage(Transform targetPosition)

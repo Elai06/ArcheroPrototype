@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SirGames.Scripts.Gameplay.Attributes
+namespace _Project.Scripts.Gameplay.Attributes
 {
     public abstract class Attack : MonoBehaviour, Damage
     {

@@ -58,7 +58,7 @@ namespace _Project.Scripts.Gameplay.Configs.Player
 
         private Vector3 GetRandomPosition()
         {
-            return new Vector3(Random.Range(-_maxPositionX, _maxPositionX), 1, Random.Range(0, _maxPositionZ));
+            return new Vector3(Random.Range(-_maxPositionX, _maxPositionX), 0, Random.Range(0, _maxPositionZ));
         }
     }
 }
