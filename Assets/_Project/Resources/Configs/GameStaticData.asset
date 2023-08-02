@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerConfig: {fileID: 11400000, guid: db3b9116638a8a144b8dca28c29f35b8, type: 2}
   _enemyConfigs: {fileID: 11400000, guid: 8a06142988e237e49a506295bc11c43d, type: 2}
+  _gunsConfig: {fileID: 11400000, guid: 4321c293c5170144ca453e3a029afec5, type: 2}
   _windowsStaticData: {fileID: 11400000, guid: 41cb2dd552fae134c8ca8535b3da6309, type: 2}

@@ -1,6 +1,7 @@
 using _Project.Scripts.Gameplay.Configs.Player;
 using _Project.Scripts.Gameplay.Models.Currency;
 using _Project.Scripts.Gameplay.UI.Header;
+using _Project.Scripts.Gameplay.UI.Inventory.Guns;
 using _Project.Scripts.Gameplay.UI.Pause;
 using _Project.Scripts.Infrastructure.PersistenceProgress;
 using _Project.Scripts.Infrastructure.SaveLoads;
@@ -26,6 +27,7 @@ namespace _Project.Scripts.Infrastructure.Installers
         [SerializeField] private LayersContainer _layersContainer;
         [SerializeField] private GameStaticData _gameStaticData;
         [SerializeField] private EnemySpawner _enemySpawner;
+        [SerializeField] private GunSpawner _gunSpawner;
 
         public override void InstallBindings()
         {
@@ -39,6 +41,7 @@ namespace _Project.Scripts.Infrastructure.Installers
         {
             Container.BindInterfacesAndSelfTo<CurrencyViewModelFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<PauseViewModelFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GunsInventoryViewModelFactory>().AsSingle();
         }
 
         private void BindGameStates()
@@ -67,7 +70,9 @@ namespace _Project.Scripts.Infrastructure.Installers
         {
             Container.BindInterfacesAndSelfTo<PauseModel>().AsSingle();
             Container.Bind<ICurrenciesModel>().To<CurrenciesModel>().AsSingle();
+            Container.Bind<IGunsInventoryModel>().To<GunsInventoryModel>().AsSingle().Lazy();
             Container.Bind<EnemySpawner>().FromInstance(_enemySpawner).AsSingle();
+            Container.Bind<GunSpawner>().FromInstance(_gunSpawner).AsSingle();
         }
     }
 }

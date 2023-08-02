@@ -26,12 +26,11 @@ namespace _Project.Scripts.Infrastructure.StateMachine.States
         public void Enter()
         {
             InitializeDependencies();
-            _saveLoadService.Load();
 
+            _saveLoadService.Load();
             _stateMachine.Enter<LoadLevelState>();
         }
-
-
+        
         private void InitializeDependencies()
         {
         }

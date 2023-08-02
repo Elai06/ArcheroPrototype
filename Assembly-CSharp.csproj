@@ -67,6 +67,8 @@
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\_Project\Prefabs\UI\Currency" />
      <Folder Include="Assets\Joystick Pack\Prefabs" />
+     <Folder Include="Assets\_Project\Prefabs\UI\GunsInventory" />
+     <Folder Include="Assets\_Project\Prefabs\Guns" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\_Project\Resources\Configs" />
@@ -89,6 +91,7 @@
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\_Project\Resources" />
+     <Folder Include="Assets\_Project\Art\Materials" />
      <Folder Include="Assets\_Project\Prefabs" />
      <Folder Include="Assets\_Project\Art\Sprites\UI" />
      <Folder Include="Assets\Joystick Pack\Sprites\All Axis Backgrounds" />

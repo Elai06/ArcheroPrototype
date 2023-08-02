@@ -22,3 +22,6 @@ MonoBehaviour:
   - WindowType: 2
     Layer: 5
     Window: {fileID: 6720900787815271582, guid: 5318881866796ab4ca49f819c79c3a15, type: 3}
+  - WindowType: 3
+    Layer: 0
+    Window: {fileID: -8322942051430279266, guid: 7227c7e78aa7cb2448171c2326028636, type: 3}

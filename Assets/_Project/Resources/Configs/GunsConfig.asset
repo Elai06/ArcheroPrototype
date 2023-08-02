@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c604e61fc5f64a8e94c6f7f04f09bf51, type: 3}
+  m_Name: GunsConfig
+  m_EditorClassIdentifier: 
+  _gunsConfig:
+  - Type: 0
+    Damage: 15
+    FireRate: 2
+    ForceShot: 5
+    Sprite: {fileID: 21300000, guid: 1e999a505c21fdb4583784d9dd731170, type: 3}
+    Gun: {fileID: -7040975427548320922, guid: a20c468bf09506f48beef80b34f029fd, type: 3}
+  - Type: 1
+    Damage: 25
+    FireRate: 0.5
+    ForceShot: 8
+    Sprite: {fileID: 21300000, guid: 9210b8a2a50596143a6c48ca3ce8b225, type: 3}
+    Gun: {fileID: 881875625938080621, guid: f3faaca5e8d2f8047bf03893a7cfd178, type: 3}

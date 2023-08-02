@@ -4,6 +4,7 @@
     {
         Menu,
         UpperPanel,
-        Pause
+        Pause,
+        GunsInventory
     }
 }

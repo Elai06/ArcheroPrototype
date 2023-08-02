@@ -18,7 +18,7 @@ MonoBehaviour:
     Bullet: {fileID: -3750374115141615657, guid: 051308e9bcdf1e548be04b330e0b1191, type: 3}
     DamageAmount: 5
     HealthAmount: 50
-    FireRate: 5
+    FireRate: 2
     MovementSpeed: 3
     RadiusAttack: 5
     ForceShot: 5
@@ -27,7 +27,7 @@ MonoBehaviour:
     Bullet: {fileID: -3750374115141615657, guid: 051308e9bcdf1e548be04b330e0b1191, type: 3}
     DamageAmount: 5
     HealthAmount: 50
-    FireRate: 5
+    FireRate: 2
     MovementSpeed: 3
     RadiusAttack: 5
     ForceShot: 5

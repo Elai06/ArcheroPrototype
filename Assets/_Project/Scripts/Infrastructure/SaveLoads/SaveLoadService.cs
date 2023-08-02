@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Infrastructure.PersistenceProgress;
+﻿using System;
+using _Project.Scripts.Infrastructure.PersistenceProgress;
 using Infrastructure.SaveLoads;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace _Project.Scripts.Infrastructure.SaveLoads
 {
     public class SaveLoadService : ISaveLoadService
     {
+        public event Action OnLoaded; 
+
         private readonly IProgressService _progressService;
 
         public SaveLoadService(IProgressService progressService)
@@ -18,6 +21,7 @@ namespace _Project.Scripts.Infrastructure.SaveLoads
         public void Load()
         {
             _progressService.InitializeProgress(GetOrCreate());
+            _progressService.OnLoaded += Loaded;
         }
 
         public void Save()
@@ -27,13 +31,19 @@ namespace _Project.Scripts.Infrastructure.SaveLoads
 
         private PlayerProgress GetOrCreate()
         {
-            if(PlayerPrefs.HasKey(SavesKey))
+            if (PlayerPrefs.HasKey(SavesKey))
             {
                 var saves = PlayerPrefs.GetString(SavesKey);
                 return JsonUtility.FromJson<PlayerProgress>(saves);
             }
-            
+
             return new PlayerProgress();
+        }
+
+        private void Loaded()
+        {
+            _progressService.OnLoaded -= Loaded;
+            OnLoaded?.Invoke();
         }
     }
 }

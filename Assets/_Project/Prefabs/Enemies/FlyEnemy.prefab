@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotPosition: {fileID: 2138316727515275990}
-  _trackingTarget: {fileID: -6921933693240826013, guid: fab3b7956bdfeea46a7f41f2154517ae, type: 3}
+  _trackingTarget: {fileID: -4288121494272595229}
 --- !u!54 &-8086269270793311196
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,6 +1,10 @@
+using System;
 using _Project.Scripts.Gameplay.Attributes;
+using _Project.Scripts.Gameplay.Configs.Guns;
 using _Project.Scripts.Gameplay.Configs.Player;
 using _Project.Scripts.Gameplay.Enums;
+using _Project.Scripts.Gameplay.UI.Inventory.Guns;
+using _Project.Scripts.Infrastructure.PersistenceProgress;
 using _Project.Scripts.Infrastructure.StaticData;
 using UnityEngine;
 using Zenject;
@@ -11,35 +15,65 @@ namespace _Project.Scripts.Gameplay.Player
     {
         private const int ENEMY = 7;
 
-        [SerializeField] private SphereCollider _detectedCollider;
-        [SerializeField] private Transform _shotPosition;
         [SerializeField] private TrackingTarget _trackingTarget;
+        [SerializeField] private SphereCollider _detectedCollider;
+        [SerializeField] private Transform _gunPosition;
 
         private PlayerConfig Config;
+        private IGunsInventoryModel _gunsInventory;
+        private GunsConfigData _gunConfig;
+        private GunSpawner _gunSpawner;
+        private IProgressService _progressService;
 
+        private bool _isCanAttack;
+        private float _timeToNextAttack;
+        private Vector3 _previousPosition;
+        private Transform _target;
         private TrafficState _trafficState = TrafficState.Stay;
 
         public int HealthAmount { get; private set; }
         public bool IsDead { get; private set; }
 
-        private bool _isCanAttack;
-        private Transform _target;
-
-        private float _timeToNextAttack;
-
-        private Vector3 _previousPosition;
+        public Transform GunPosition => _gunPosition;
 
         [Inject]
-        private void Construct(GameStaticData gameStaticData)
+        private void Construct(GameStaticData gameStaticData, IGunsInventoryModel gunsInventoryModel,
+            GunSpawner gunSpawner, IProgressService progressService)
         {
             Config = gameStaticData.GetPlayerConfig();
+            _gunsInventory = gunsInventoryModel;
+            _gunSpawner = gunSpawner;
+            _progressService = progressService;
         }
 
         private void Start()
         {
             _detectedCollider.radius = Config.DetectedRadius;
-            HealthAmount = Config.Health;
             _previousPosition = transform.position;
+            HealthAmount = Config.Health;
+        }
+
+        private void OnEnable()
+        {
+            _progressService.OnLoaded += Loaded;
+            _gunsInventory.OnEquipped += Equipped;
+        }
+
+        private void OnDisable()
+        {
+            _progressService.OnLoaded -= Loaded;
+            _gunsInventory.OnEquipped += Equipped;
+        }
+
+        private void Equipped()
+        {
+            _gunConfig = _gunsInventory.GetEquippedGun();
+        }
+
+        private void Loaded()
+        {
+            _gunConfig = _gunsInventory.GetEquippedGun();
+            _gunSpawner.SpawnGun();
         }
 
         private void FixedUpdate()
@@ -53,7 +87,7 @@ namespace _Project.Scripts.Gameplay.Player
             if (!_isCanAttack)
             {
                 _timeToNextAttack += Time.deltaTime;
-                if (_timeToNextAttack >= Config.FiringRate)
+                if (_timeToNextAttack >= _gunConfig.FireRate)
                 {
                     _isCanAttack = true;
                     _timeToNextAttack = 0;
@@ -106,8 +140,10 @@ namespace _Project.Scripts.Gameplay.Player
                 _target = targetPosition;
 
                 _isCanAttack = false;
-                Instantiate(Config.Bullet, _shotPosition.position, Quaternion.identity)
-                    .Shot(targetPosition, Config.ForceShot, Config.Attack);
+                var shotPosition = _gunSpawner.GetEquippedGun().GetShotPosition();
+
+                Instantiate(Config.Bullet, shotPosition.position, Quaternion.identity)
+                    .Shot(targetPosition, _gunConfig.ForceShot, _gunConfig.Damage);
             }
         }
     }

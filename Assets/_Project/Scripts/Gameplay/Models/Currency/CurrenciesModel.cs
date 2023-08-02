@@ -28,7 +28,7 @@ namespace _Project.Scripts.Gameplay.Models.Currency
 
         public void Initialize()
         {
-            foreach (var currencyData in _progressService.PlayerProgress.CurrencyProgressData)
+            foreach (var currencyData in _progressService.PlayerProgress.CurrencyDataProgress)
             {
                 CurrenciesData.Add(currencyData.CurrencyType, new CurrencyData
                 {
@@ -69,7 +69,7 @@ namespace _Project.Scripts.Gameplay.Models.Currency
 
         private void UpdateProgress()
         {
-            _progressService.PlayerProgress.CurrencyProgressData = CurrenciesData.Values.ToList();
+            _progressService.PlayerProgress.CurrencyDataProgress = CurrenciesData.Values.ToList();
         }
     }
 
