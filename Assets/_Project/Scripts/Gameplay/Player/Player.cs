@@ -6,6 +6,7 @@ using _Project.Scripts.Gameplay.Enums;
 using _Project.Scripts.Gameplay.UI.Inventory.Guns;
 using _Project.Scripts.Infrastructure.PersistenceProgress;
 using _Project.Scripts.Infrastructure.StaticData;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -18,6 +19,7 @@ namespace _Project.Scripts.Gameplay.Player
         [SerializeField] private TrackingTarget _trackingTarget;
         [SerializeField] private SphereCollider _detectedCollider;
         [SerializeField] private Transform _gunPosition;
+        [SerializeField] private TextMeshPro _healthText;
 
         private PlayerConfig Config;
         private IGunsInventoryModel _gunsInventory;
@@ -51,6 +53,8 @@ namespace _Project.Scripts.Gameplay.Player
             _detectedCollider.radius = Config.DetectedRadius;
             _previousPosition = transform.position;
             HealthAmount = Config.Health;
+            
+            HealthView(HealthAmount);
         }
 
         private void OnEnable()
@@ -125,7 +129,7 @@ namespace _Project.Scripts.Gameplay.Player
                 Dead();
             }
 
-            Debug.Log($"Player: GetDamage {damage} | Health {HealthAmount}");
+            HealthView(HealthAmount);
         }
 
         private void Dead()
@@ -145,6 +149,11 @@ namespace _Project.Scripts.Gameplay.Player
                 Instantiate(Config.Bullet, shotPosition.position, Quaternion.identity)
                     .Shot(targetPosition, _gunConfig.ForceShot, _gunConfig.Damage);
             }
+        }
+        
+        private void HealthView(int hp)
+        {
+            _healthText.text = hp.ToString();
         }
     }
 }

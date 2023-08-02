@@ -4,6 +4,7 @@ using _Project.Scripts.Gameplay.Configs.Enemy;
 using _Project.Scripts.Gameplay.Enums;
 using _Project.Scripts.Gameplay.Player;
 using SirGames.Scripts.Gameplay.Enemies;
+using TMPro;
 using UnityEngine;
 
 namespace _Project.Scripts.Gameplay.Enemies
@@ -17,6 +18,7 @@ namespace _Project.Scripts.Gameplay.Enemies
 
         [SerializeField] private Transform _shotPosition;
         [SerializeField] private TrackingTarget _trackingTarget;
+        [SerializeField] private TextMeshPro _healthText;
 
         public int HealthAmount { get; private set; }
 
@@ -35,6 +37,7 @@ namespace _Project.Scripts.Gameplay.Enemies
             _configData = configData;
             EnemyType = _configData.Type;
             HealthAmount = configData.HealthAmount;
+            HealthView(HealthAmount);
         }
 
         public EnemyType EnemyType { get; set; }
@@ -101,6 +104,8 @@ namespace _Project.Scripts.Gameplay.Enemies
             {
                 Dead();
             }
+            
+            HealthView(HealthAmount);
         }
 
         private void Dead()
@@ -117,6 +122,11 @@ namespace _Project.Scripts.Gameplay.Enemies
                 Instantiate(_configData.Bullet, _shotPosition.position, Quaternion.identity)
                     .Shot(targetPosition, _configData.ForceShot, _configData.DamageAmount);
             }
+        }
+        
+        private void HealthView(int hp)
+        {
+            _healthText.text = hp.ToString();
         }
     }
 }
